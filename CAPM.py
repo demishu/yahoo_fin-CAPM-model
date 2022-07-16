@@ -25,7 +25,10 @@ def set_interval(first_day = None, last_day = None, interval = 365, fmt="%Y/%m/%
     if last_day is None:
         last_day = datetime.datetime.now()
     else:
-        last_day = datetime.datetime.strptime(last_day, fmt)
+        try:
+            last_day = datetime.datetime.strptime(last_day, fmt)
+        except:
+            raise("检查输入的最后一天")
     if first_day:
         try:
             first_day = datetime.datetime.strptime(first_day,fmt).strftime("%Y/%m/%d")
