@@ -174,5 +174,5 @@ class CAPM(Meta_output_class):
     
 if __name__=='__main__':
     first_day, last_day = set_interval(first_day = '2022/7/1')
-    ticker_list = list(pd.read_excel("./股票列表.xlsx")["ticker"])
+    ticker_list = list() #这里输入你的股票代码列表就行。比如说AAPL代表苹果，MSFT代表微软， ["^IXIC",'AAPL',"MSFT"]就会爬纳斯达克100、苹果和微软。
     model = CAPM(ticker_list,first_day, last_day, output_data = True)
