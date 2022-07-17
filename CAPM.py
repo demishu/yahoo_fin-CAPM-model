@@ -182,6 +182,6 @@ class CAPM(Meta_output_class):
     '类方法 -- 结尾'
     
 if __name__=='__main__':
-    first_day, last_day = set_interval(first_day = '2022/1/1')
-    ticker_list = list(pd.read_excel("./股票列表.xlsx")["ticker"])
+    first_day, last_day = set_interval('2022/1/1')
+    ticker_list = list()                #列表必须包含纳指（"^IXIC")。 假设我想爬苹果和微软的股票，那么我就要写['^IXIC','AAPL','MSFT']。 股票必须以股票代码的形式写入列表。
     model = CAPM(ticker_list,first_day, last_day, output_data = True)
