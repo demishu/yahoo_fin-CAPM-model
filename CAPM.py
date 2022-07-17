@@ -110,7 +110,7 @@ class CAPM(Meta_output_class):
     def _OLS(self, y, x):
         "scipy的最小二乘法OLS"
         slope, intercept, r_value, p_value, std_err = ols(x, y)
-        return intercept, slope, r_value, p_value
+        return intercept, slope, r_value**2, p_value
     @property
     def data(self):
         return self._data
