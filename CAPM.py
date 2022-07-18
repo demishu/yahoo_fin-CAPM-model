@@ -169,7 +169,7 @@ class CAPM(Meta_output_class):
         设等式左边为y， 右半边则是rf*x
         需要再OLS一次，获得rf的信息
         """
-        rf_data = list(self._OLS(stats["mean"]-stats['beta/slope']*stats.loc['mean','纳指'],
+        rf_data = list(self._OLS(stats["mean"]-stats['beta/slope']*stats.loc['纳指','mean'],
                                     1-stats['beta/slope']))
         '需要新增一行nan，因为rf这一列没有mean。 如果不添加nan， pandas就会因为\
         stats有5行，而rf_data只有4行，而insert失败'
