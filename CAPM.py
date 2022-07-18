@@ -182,5 +182,5 @@ class CAPM(Meta_output_class):
     
 if __name__=='__main__':
     first_day, last_day = set_interval(first_day = '2022/1/1')
-    ticker_list = list() #ticker_list必须包含"^IXIC"(纳斯达克100指数)。 ticker_list只要是个可迭代对象就行。 如果我想算苹果和微软的数据，我可以这样写ticker_list:['^IXIC','AAPL','MSFT']
-    model = CAPM(ticker_list,first_day, last_day, output_data = True)
+    tickers_list = list() #tickers_list必须包含"^IXIC"(纳斯达克100指数)。 tickers_list只要是个可迭代对象就行。 如果我想算苹果和微软的数据，我可以这样写tickers_list:['^IXIC','AAPL','MSFT']
+    model = CAPM(tickers_list,first_day, last_day, output_data = True)
