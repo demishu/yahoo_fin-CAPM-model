@@ -96,12 +96,11 @@ class CAPM(Meta_output_class):
     "类装饰器"
     def _to_excel(func):
         def new_func(self, *args, **kwargs):
+            df = func(self, *args, **kwargs)
             if self._output_data:
                 print(f"开始输出{self._output_path}")
                 self._create_blank_sheet()
                 self._set_writer(self._output_path)
-            df = func(self, *args, **kwargs)
-            if self._output_data:
                 print(f"正在保存 {self._sheet_name}工作表")
                 df.to_excel(self._writer, self._sheet_name)
                 self._set_columns_width(df,self._sheet_name)
